@@ -36,7 +36,7 @@ public class Controller{
 	ObservableList<Entry> lst = FXCollections.observableArrayList();
 	
 	
-	public void init() {
+	public void turn_editable() {
 		link.setCellFactory(TextFieldTableCell.forTableColumn());
 		comment.setCellFactory(TextFieldTableCell.forTableColumn());;
 	}
@@ -49,7 +49,7 @@ public class Controller{
 	
 	
 	public void load(ActionEvent e) throws FileNotFoundException, IOException {
-		init();
+		turn_editable();
 		link.setCellValueFactory(new PropertyValueFactory<Entry, String>("link"));
 		hoster.setCellValueFactory(new PropertyValueFactory<Entry, String>("hoster"));
 		comment.setCellValueFactory(new PropertyValueFactory<Entry, String>("comment"));
@@ -89,7 +89,7 @@ public class Controller{
 	
 	
 	public void add(ActionEvent e) throws IOException {
-		init();
+		turn_editable();
 		link.setCellValueFactory(new PropertyValueFactory<Entry, String>("link"));
 		hoster.setCellValueFactory(new PropertyValueFactory<Entry, String>("hoster"));
 		comment.setCellValueFactory(new PropertyValueFactory<Entry, String>("comment"));
@@ -167,3 +167,4 @@ public class Controller{
 		ent.setLink(e.getNewValue().toString());
 	}
 }
+
