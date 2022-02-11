@@ -7,20 +7,24 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 
-public class Checktask extends Thread{
+public class Checktask implements Runnable{
 	Checktask(ProgressBar progressbar, TableView<Entry> table){
 		this.progressbar = progressbar;
 		this.table = table;
 	}
 	ProgressBar progressbar;
 	TableView<Entry> table;
-
+	
 	public void run() {
 		ObservableList<Entry> lst;
 		Double progress = 0.0;
 		lst = table.getItems();
 		
 		progressbar.setOpacity(1);
+		for (Entry item : lst) {
+			System.out.println(item.getComment());
+		}
+		
 		
 		for(int i = 0; i < lst.size(); i++) {
 			progress = ((double)i / (double)lst.size());

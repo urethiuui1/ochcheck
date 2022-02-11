@@ -43,8 +43,8 @@ public class Controller{
 
 	
 	public void check(ActionEvent e) throws IOException {
-	    Checktask thread = new Checktask(progressbar, table);
-	    thread.start();
+	    Thread t1 = new Thread(new Checktask(progressbar, table));
+        t1.start();
 	}
 	
 	
@@ -167,4 +167,3 @@ public class Controller{
 		ent.setLink(e.getNewValue().toString());
 	}
 }
-
