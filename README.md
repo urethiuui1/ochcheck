@@ -21,9 +21,13 @@ This tool helps you to track which files got deleted because of inactivety so yo
 - Load all links from a file
 - Click the "check" button to start the checking process
 
-## Requirements to run the application
+## Requirements to run the jar
 - openjfx
 ```
 sudo apt install openjfx
 ```
 
+## Run the application with maven
+```
+mvn clean javafx:run
+```
