@@ -78,10 +78,10 @@ public class Controller{
 		
 		PrintWriter writer = new PrintWriter(f, "UTF-8");
 		for(int i = 0; i < table.getItems().size(); i++) {
-			writer.print(table.getItems().get(i).link + ",");
-			writer.print(table.getItems().get(i).hoster + ",");
-			writer.print(table.getItems().get(i).comment + ",");
-			writer.print(table.getItems().get(i).status + "\n");
+			writer.print(table.getItems().get(i).getLink() + ",");
+			writer.print(table.getItems().get(i).getHoster() + ",");
+			writer.print(table.getItems().get(i).getComment() + ",");
+			writer.print(table.getItems().get(i).getStatus() + "\n");
 		}
 
 		writer.close();

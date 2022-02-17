@@ -1,10 +1,10 @@
 package checker;
 
 public class Entry {
-	String link = "R";
-	String hoster = "L";
-	String comment = "R";
-	String status = "L";
+	private String link = "";
+	private String hoster = "";
+	private String comment = "";
+	private String status = "";
     public Entry() {
     }
 
