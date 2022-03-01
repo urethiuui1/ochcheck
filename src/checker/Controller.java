@@ -58,33 +58,15 @@ public class Controller{
 		FileChooser chooser = new FileChooser();
 		File f = chooser.showOpenDialog(null);
 		
-		
-		try (BufferedReader br = new BufferedReader(new FileReader(f))) {
-		    String line;
-		    while ((line = br.readLine()) != null) {
-		    	String[] splt = line.split(",");
-		    	lst.add(new Entry(splt[0], splt[1], splt[2], splt[3]));
-		    }
-		}
-
-		table.setItems(lst);
+		Entry.load(f, table);
 		setRowColor();
 	}
 	
 	
 	public void save(ActionEvent e) throws FileNotFoundException, UnsupportedEncodingException {
 		FileChooser chooser = new FileChooser();
-		File f = chooser.showSaveDialog(null);		
-		
-		PrintWriter writer = new PrintWriter(f, "UTF-8");
-		for(int i = 0; i < table.getItems().size(); i++) {
-			writer.print(table.getItems().get(i).getLink() + ",");
-			writer.print(table.getItems().get(i).getHoster() + ",");
-			writer.print(table.getItems().get(i).getComment() + ",");
-			writer.print(table.getItems().get(i).getStatus() + "\n");
-		}
-
-		writer.close();
+		File f = chooser.showSaveDialog(null);
+		Entry.save(f, table);
 	}
 	
 	
